@@ -60,7 +60,7 @@ let toggleMode=()=>{
               <div className="container my-3">
             <Routes>
               <Route exact path="/about" element={<About mode={mode} />} />
-              <Route exact path="/" element={<TextForm heading ="Enter The Text To Analyze" mode={mode}  btnmode={btnmode} showAlert={showAlert}/>} />
+              <Route exact path="/text-changer" element={<TextForm heading ="Enter The Text To Analyze" mode={mode}  btnmode={btnmode} showAlert={showAlert}/>} />
             </Routes>
 
               </div>
