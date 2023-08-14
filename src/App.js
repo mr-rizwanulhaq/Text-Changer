@@ -54,15 +54,14 @@ let toggleMode=()=>{
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename='/text-changer/'>
       
              <Routes>
             <Navbar title="Text Changer" tabTwo="About" tabOne= "Home" mode={mode} toggleMode={toggleMode} btnmode={btnmode} btntext={btntext}/>
             <Alert alert={alert}/>
               <div className="container my-3">
-              <Route exact path="/text-changer/" element={<TextForm heading ="Enter The Text To Analyze" mode={mode}  btnmode={btnmode} showAlert={showAlert}/>} />
-              <Route exact path="/text-changer/about" element={<About mode={mode} />} />
-              <Route exact path="/text-changer/" element={<TextForm heading ="Enter The Text To Analyze" mode={mode}  btnmode={btnmode} showAlert={showAlert}/>} />
+              <Route path="/about" element={<About mode={mode} />} />
+              <Route path="/" element={<TextForm heading ="Enter The Text To Analyze" mode={mode}  btnmode={btnmode} showAlert={showAlert}/>} />
             
 
               </div>
