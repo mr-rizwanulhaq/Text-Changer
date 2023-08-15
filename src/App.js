@@ -56,7 +56,7 @@ function App() {
     <>
 
 
-      <BrowserRouter >
+      <BrowserRouter basename='/text-changer'>
         <Navbar title="Text Changer" tabTwo="About" tabOne="Home" mode={mode} toggleMode={toggleMode} btnmode={btnmode} btntext={btntext} />
         <Alert alert={alert}/>
 
@@ -65,7 +65,7 @@ function App() {
             
           <Routes>  
             <Route exact path="/about" element={<About mode={mode} />} />
-            <Route path="/" element={<TextForm heading="Enter The Text To Analyze" mode={mode} btnmode={btnmode} showAlert={showAlert} />} />
+            <Route exact path="/text-changer" element={<TextForm heading="Enter The Text To Analyze" mode={mode} btnmode={btnmode} showAlert={showAlert} />} />
           </Routes>
           </div>
         
