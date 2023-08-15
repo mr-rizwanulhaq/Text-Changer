@@ -56,7 +56,7 @@ function App() {
     <>
 
 
-      <BrowserRouter  >
+      <BrowserRouter >
         <Navbar title="Text Changer" tabTwo="About" tabOne="Home" mode={mode} toggleMode={toggleMode} btnmode={btnmode} btntext={btntext} />
         <Alert alert={alert}/>
 
