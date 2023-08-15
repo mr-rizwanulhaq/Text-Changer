@@ -54,26 +54,27 @@ function App() {
 
   return (
     <>
-ReactDOM.render(
-    <React.StrictMode>
-      <BrowserRouter >
+
+
+      <BrowserRouter  >
         <Navbar title="Text Changer" tabTwo="About" tabOne="Home" mode={mode} toggleMode={toggleMode} btnmode={btnmode} btntext={btntext} />
         <Alert alert={alert}/>
-        <Routes>
 
+        
           <div className="container my-3">
+            
+          <Routes>  
             <Route exact path="/about" element={<About mode={mode} />} />
             <Route path="/" element={<TextForm heading="Enter The Text To Analyze" mode={mode} btnmode={btnmode} showAlert={showAlert} />} />
-
-
+          </Routes>
           </div>
-        </Routes>
+        
 
 
       </BrowserRouter>
-      </React.StrictMode>
-      document.getElementById('root')
-)
+
+
+
     </>
   );
 }
