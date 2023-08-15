@@ -16,60 +16,60 @@ import About from './components/About';
 
 
 function App() {
-const [mode, setmode] = useState("light")
-const [btnmode, setbtnmode] = useState("dark")
-const [btntext, setbtntext] = useState("Dark Mode")
-const [alert, setAlert] = useState(null)
+  const [mode, setmode] = useState("light")
+  const [btnmode, setbtnmode] = useState("dark")
+  const [btntext, setbtntext] = useState("Dark Mode")
+  const [alert, setAlert] = useState(null)
 
 
-let showAlert=(message, type)=>{
-  setAlert({
-      message: message ,
-     type: type
-  
+  let showAlert = (message, type) => {
+    setAlert({
+      message: message,
+      type: type
+
     })
-    setTimeout(()=>{
+    setTimeout(() => {
       setAlert(null);
     }, 2000)
-}
-
-let toggleMode=()=>{
-  if (mode=== "light") {
-    setmode("dark");
-    setbtnmode("light");
-    setbtntext("Light Mode");
-    document.body.style.backgroundColor ="#5A5A5A";
-    showAlert("Dark mode has been enabled", "success");
-    
-  } else {
-    setmode("light")
-    setbtnmode("dark")
-    setbtntext("Dark Mode")
-    document.body.style.backgroundColor ="white";
-    showAlert("Light mode has been enabled", "success");
-    
   }
-}
+
+  let toggleMode = () => {
+    if (mode === "light") {
+      setmode("dark");
+      setbtnmode("light");
+      setbtntext("Light Mode");
+      document.body.style.backgroundColor = "#5A5A5A";
+      showAlert("Dark mode has been enabled", "success");
+
+    } else {
+      setmode("light")
+      setbtnmode("dark")
+      setbtntext("Dark Mode")
+      document.body.style.backgroundColor = "white";
+      showAlert("Light mode has been enabled", "success");
+
+    }
+  }
 
 
   return (
     <>
       <BrowserRouter basename='/text-changer/'>
-      
-             <Routes>
-            <Navbar title="Text Changer" tabTwo="About" tabOne= "Home" mode={mode} toggleMode={toggleMode} btnmode={btnmode} btntext={btntext}/>
-            <Alert alert={alert}/>
-              <div className="container my-3">
-              <Route path="/about" element={<About mode={mode} />} />
-              <Route path="/" element={<TextForm heading ="Enter The Text To Analyze" mode={mode}  btnmode={btnmode} showAlert={showAlert}/>} />
-            
+        <Navbar title="Text Changer" tabTwo="About" tabOne="Home" mode={mode} toggleMode={toggleMode} btnmode={btnmode} btntext={btntext} />
+        <Alert alert={alert} />
+        <Routes>
 
-              </div>
-              </Routes>
+          <div className="container my-3">
+            <Route path="/about" element={<About mode={mode} />} />
+            <Route path="/" element={<TextForm heading="Enter The Text To Analyze" mode={mode} btnmode={btnmode} showAlert={showAlert} />} />
 
 
-    </BrowserRouter>
-        
+          </div>
+        </Routes>
+
+
+      </BrowserRouter>
+
     </>
   );
 }
